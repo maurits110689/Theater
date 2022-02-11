@@ -17,3 +17,10 @@ article{
     background-color:lightblue;
     width:100vw;
 }
+footer{
+    background-color:lightseagreen;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    height:50px;
+}
