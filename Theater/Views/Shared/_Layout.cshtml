@@ -5,13 +5,15 @@
     </head>
 
     <body>
-    <head>header</head>
-    <div>
-        <nav>article</nav>
-        <article>article</article>
-        <aside>aside</aside>
-    </div>
-       @RenderBody()       
+        <header>header</header>
+        
+        <div>
+            <nav>article</nav>
+            <article>@RenderBody()</article>
+            <aside>aside</aside>
+        </div>
+
+       
     </body>
 
 </html>
