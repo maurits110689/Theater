@@ -5,3 +5,15 @@
 body{
     margin:0;
 }
+.content{
+    display:flex;
+}
+nav{
+    width:100vw;
+    color:black;
+    background-color:lightcoral;
+}
+article{
+    background-color:lightblue;
+    width:100vw;
+}
