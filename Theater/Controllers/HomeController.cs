@@ -28,6 +28,15 @@ namespace Theater.Controllers
             return View();
         }
 
+        [Route("contact")]
+        public IActionResult Contact(string name, string email)
+        {
+            ViewData["name"] = name;
+            ViewData["email"] = email;
+
+            return View();
+        }       
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

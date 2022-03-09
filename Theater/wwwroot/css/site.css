@@ -1,26 +1,27 @@
-﻿header{
-    background-color:#ff9664;
-    height:200px;
+﻿header {
+    background-color: #D99C52;
+    height: 200px;
 }
 body{
     margin:0;
 }
-.content{
-    display:flex;
+.content {
+    display: flex;
+    background-color: #D99C52
 }
-nav{
-    width:100vw;
-    color:black;
-    background-color:lightcoral;
+nav {
+    width: 100vw;
+    color: black;
+    background-color: #8C0303;
 }
-article{
-    background-color:lightblue;
-    width:100vw;
+article {
+    background-color: #8C0303;
+    width: 100vw;
 }
-footer{
-    background-color:lightseagreen;
-    position:fixed;
-    bottom:0px;
-    width:100%;
-    height:50px;
+footer {
+    background-color: #D99C52;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
 }
