@@ -1,10 +1,22 @@
-﻿@{
+﻿@model Person
+@{
     ViewData["Title"] = "Contact";
 }
 <h1>@ViewData["Title"]</h1>
 
-<form>
-    Naam: <input type="text" name="name" />
-    Email: <input type="text" name="email" />
-    <input type="submit" value="opslaan" />
+<form method="post">
+    <div>Voornaam: <input type="text" name="firstname"/></div>
+    @Html.ValidationMessageFor(m => m.FirstName)
+    <div>Achternaam: <input type="text" name="lastname"/></div>
+    @Html.ValidationMessageFor(m => m.LastName)
+    <div>E-mail: <input type="text" name="email"/></div>
+    @Html.ValidationMessageFor(m => m.Email)
+    <div>Telefoon: <input type="text" name="phone"/></div>
+    <div>Adres: <input type="text" name="address"/></div>
+    <div>
+        Beschrijving: 
+        @Html.TextAreaFor(m=> m.Description)
+    </div>
+   <input type= "submit" value="verstuur" />
 </form>
+<p>Als u vragen of een opmerking heeft, vul dan graag dit formulier in, wij komen dan zo snel mogelijk op u terug.</p>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Theater.Models;
 
+
 namespace Theater.Controllers
 {
     public class HomeController : Controller
@@ -18,24 +19,32 @@ namespace Theater.Controllers
             _logger = logger;
         }
 
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [Route("show-all")]
+        public IActionResult ShowAll()
+        {
+            return View();
+        }
+        [Route("contact")]
+
+        public IActionResult Contact()
         {
             return View();
         }
 
+        [HttpPost]
         [Route("contact")]
-        public IActionResult Contact(string name, string email)
+        public IActionResult Contact(Person person)
         {
-            ViewData["name"] = name;
-            ViewData["email"] = email;
-
-            return View();
-        }       
+            if (ModelState.IsValid)
+                return Redirect("/Succes");
+            return View(person);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
