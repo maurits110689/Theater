@@ -26,6 +26,12 @@ namespace Theater.Controllers
             return View();
         }
 
+        [Route("titanic")]
+        public IActionResult Titanic()
+        {
+            return View();
+        }
+
         [Route("show-all")]
         public IActionResult ShowAll()
         {
