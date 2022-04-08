@@ -1,14 +1,15 @@
-﻿@model List<string>
+﻿@using Theater.Database
+@model List<Product>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1>Alle namen!</h1>
-    @foreach(string naam in Model)
-    {
-        <p>@naam</p>
-    }
-    <p>Je mooie verhaal</p>
-    <img src="~/img/download.jfif" />
+    <h1 class="display-4">Welcome</h1>
+    <ul> 
+      @foreach(var product in Model)
+        {   
+          <li>@product.Naam - @product.Prijs - @product.Beschikbaarheid</li>
+        }
+    </ul>
 </div>
