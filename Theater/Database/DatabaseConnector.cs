@@ -9,7 +9,7 @@ namespace Database.Database
         public static List<Dictionary<string, object>> GetRows(string query)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=110689;Pwd=Informatica2022;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110689;Uid=110689;Pwd=Informatica2022;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
