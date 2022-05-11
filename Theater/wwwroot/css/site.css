@@ -25,3 +25,7 @@ footer {
     width: 100%;
     height: 50px;
 }
+
+.product{
+    display: flex;
+}
