@@ -2,22 +2,27 @@
     background-color: #D99C52;
     height: 70px;
 }
-body{
-    margin:0;
+
+body {
+    margin: 0;
 }
+
 .content {
     display: flex;
     background-color: #D99C52
 }
+
 nav {
     width: 100vw;
     color: black;
     background-color: #8C0303;
 }
+
 article {
     background-color: #8C0303;
     width: 100vw;
 }
+
 footer {
     background-color: #D99C52;
     position: fixed;
@@ -26,6 +31,6 @@ footer {
     height: 50px;
 }
 
-.product{
+.product {
     display: flex;
 }

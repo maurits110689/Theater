@@ -4,15 +4,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1 class= "display-4" ></h1>
 <div class="products">
+    <h1 class="display-4">Welcome</h1>
+    @foreach (var product in Model)
+    {
     <div class="product">
-        @foreach (var product in Model)
-        {
-            <h3>@product.Naam</h3>
-            <p>@product.Prijs</p>
-            <p>@product.Beschikbaarheid</p>
-        }
-    </div>
+        <h3>@product.Naam</h3>
+        <p>@product.Prijs</p>
+        <p>@product.Beschikbaarheid</p>
+    </div>    
     }
+   
+   
 </div>
