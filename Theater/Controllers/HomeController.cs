@@ -26,34 +26,35 @@ namespace Theater.Controllers
         public IActionResult Index()
         {
             // lijst met producten ophalen
-            var products = GetAllProducts();
+            var products = GetAllVoorstellingen();
 
             // de lijst met producten in de html stoppen
             return View(products);
         }
 
-        public List<Product> GetAllProducts()
+        public List<Voorstelling> GetAllVoorstellingen()
         {
             // alle producten ophalen uit de database
-            var rows = DatabaseConnector.GetRows("select * from product");
+            var rows = DatabaseConnector.GetRows("select * from voorstelling");
 
             // lijst maken om alle producten in te stoppen
-            List<Product> products = new List<Product>();
+            List<Voorstelling> voorstellingen = new List<Voorstelling>();
 
             foreach (var row in rows)
             {
                 // Voor elke rij maken we nu een product
-                Product p = new Product();
-                p.Naam = row["naam"].ToString();
-                p.Prijs = row["prijs"].ToString();
-                p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
+                Voorstelling p = new Voorstelling();
                 p.Id = Convert.ToInt32(row["id"]);
+                p.Naam = row["naam"].ToString();
+                p.Beschrijving = row["beschrijving"].ToString();
+                p.Datum = DateTime.Parse(row["datum"].ToString());
+                
 
                 // en dat product voegen we toe aan de lijst met producten
-                products.Add(p);
+                voorstellingen.Add(p);
             }
 
-            return products;
+            return voorstellingen;
         }
 
         [Route("titanic")]
@@ -93,5 +94,40 @@ namespace Theater.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        [Route("voorstelling/{id}/{naam}")]
+        public IActionResult VoorstellingDetails(int id, string naam)
+        {
+            var Voorstelling = GetVoorstelling(id);
+
+            return View(Voorstelling);
+        }
+
+        public Voorstelling GetVoorstelling(int id)
+        {
+            // alle producten ophalen uit de database
+            var rows = DatabaseConnector.GetRows($"select * from voorstelling where id = {id}");
+
+            // lijst maken om alle producten in te stoppen
+            List<Voorstelling> voorstellingen = new List<Voorstelling>();
+
+            foreach (var row in rows)
+            {
+                // Voor elke rij maken we nu een product
+                Voorstelling p = new Voorstelling();
+                p.Id = Convert.ToInt32(row["id"]);
+                p.Naam = row["naam"].ToString();
+                p.Beschrijving = row["beschrijving"].ToString();
+                p.Datum = DateTime.Parse(row["datum"].ToString());
+
+
+                // en dat product voegen we toe aan de lijst met producten
+                voorstellingen.Add(p);
+            }
+
+            return voorstellingen[0];
+        }
     }
+
 }

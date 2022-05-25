@@ -1,0 +1,11 @@
+﻿@using Theater.Database
+@model Voorstelling
+@{
+    ViewData["Title"] = Model.Naam;
+}
+
+<div class="text=center">
+    <h1 class="display-4">@Model.Naam</h1>
+    <p>@Model.Beschrijving</p>
+    <p>@Model.Datum</p>
+</div>
