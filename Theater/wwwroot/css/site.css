@@ -1,24 +1,25 @@
 ﻿header {
     background-color: #D99C52;
-    height: 70px;
+    display: block;
+    height: 90px;
+    margin: 0 auto;
 }
 
 body {
     margin: 0;
 }
 
-.content {
+content {
     display: flex;
     background-color: #D99C52
 }
 
-nav {
-    width: 100vw;
-    color: black;
-    background-color: #8C0303;
+.nav {
+    overflow: hidden;
+    background-color: #D99C52;
 }
 
-nav a{
+.nav a{
     float: left;
     color: #000000;
     width: 20%;
@@ -27,6 +28,10 @@ nav a{
     text-decoration: none;
 }
 
+.nav a:hover {
+        background-color: #8C0303;
+        color: #000000
+}
 
 article {
     background-color: #8C0303;
@@ -37,6 +42,7 @@ footer {
     background-color: #D99C52;
     position: fixed;
     bottom: 0px;
+    display: block;
     width: 100%;
     height: 60px;
 }
@@ -50,4 +56,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
     width: 10%;
+}
+
+.img.center {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0px;
 }
