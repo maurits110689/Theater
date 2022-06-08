@@ -63,3 +63,15 @@ footer {
     margin: 0 auto;
     padding: 0px;
 }
+
+.voorstellingen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px;
+    background-color: #8C0303;
+}
+
+.voorstelling img:hover{
+    opacity: 80%
+}

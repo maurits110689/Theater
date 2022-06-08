@@ -8,6 +8,7 @@ namespace Theater.Database
         public string? Naam { get; set; }
         public string? Beschrijving { get; set; }
         public DateTime? Datum { get; set; }
+        public string Poster { get; set; }
 
     }
 }

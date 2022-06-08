@@ -4,16 +4,69 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="products">
-    <h1 class="display-4">Welcome</h1>
-    @foreach (var voorstelling in Model)
-    {
-    <a href="/voorstelling/@voorstelling.Id/@voorstelling.Naam" class="product">
-        <h3>@voorstelling.Naam</h3>
-        <p>@voorstelling.Beschrijving</p>
-        <p>@voorstelling.Datum?.ToString("f")</p>
-    </a>    
-    }
-   
-   
+<h1 class="display-4" ></h1>
+
 </div>
+<html>
+    <link rel="stylesheet" href="~/css/site.css" />
+<body>
+    <div class="text-center">
+        <h1  class="display-4">
+            Voorstellingen <BR><BR>
+        </h1>
+            <div class="voorstellingen"
+                  @foreach (var voorstelling in Model)
+                  { <div class="voorstelling">
+                       <a href="/voorstelling/@voorstelling.Id/@voorstelling.Naam">
+                            <img src="@voorstelling.Poster" width="250" height="350" />
+                       </a>
+                    </div>
+                  }
+            </div>
+            <BR><BR>
+        <h1>
+            Nu.. <BR>
+        </h1>
+            <div class ="nu">
+                <table>
+                    <tr>
+                        <td>19.30 - 21.15</td>
+                        <td>Titanic</td>
+                    </tr>
+                     <tr>
+                        <td>10.00 - 11.30</td>
+                        <td>Checkpoint Theater</td>
+                    </tr>
+                     <tr>
+                        <td>20.00 - 22.15</td>
+                        <td>The Mousetrap</td>
+                    </tr>
+                     <tr>
+                        <td>19.00 - 21.00</td>
+                        <td>Les Misérables</td>
+                    </tr>
+                     <tr>
+                        <td>20.00 - 23.00</td>
+                        <td>Suzan & Freek Theatertour</td>
+                    </tr> 
+                    <tr>
+                        <td>19.30 - 21.45</td>
+                        <td>Disney's Aladdin</td>
+                    </tr>
+                </table>
+            </div>
+            <BR><BR>
+        <h1>
+            Mededelingen<BR>
+        </h1>
+            <div class="mededelingen">
+                 <ul>
+                     <li>Let op:rolstoelplaatsen bijna op!</li>
+                     <li>Les Misérables komt terug in 2023!</li>
+                 </ul>
+            </div>    
+
+            <p>Welkom bij Theater Ludere!</p>
+    </div>
+</body>
+</html>

@@ -48,6 +48,7 @@ namespace Theater.Controllers
                 p.Naam = row["naam"].ToString();
                 p.Beschrijving = row["beschrijving"].ToString();
                 p.Datum = DateTime.Parse(row["datum"].ToString());
+                p.Poster = row["poster"].ToString();
                 
 
                 // en dat product voegen we toe aan de lijst met producten
