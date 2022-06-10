@@ -8,8 +8,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Theater.Models;
-using Database.Database;
 using Theater.Database;
+using Theater.Database;
+using Database.Database;
 
 namespace Theater.Controllers
 {
@@ -80,8 +81,10 @@ namespace Theater.Controllers
         [Route("contact")]
         public IActionResult Contact(Person person)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) {
+                DatabaseConnector.SavePerson(person);
                 return Redirect("/Succes");
+            }
             return View(person);
         }
 

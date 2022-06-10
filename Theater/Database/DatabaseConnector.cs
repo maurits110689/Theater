@@ -1,16 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
+using SendAndStore.Models;
 using System.Collections.Generic;
 
 namespace Database.Database
 {
     public static class DatabaseConnector
     {
+        // stel in waar de database gevonden kan worden
+        // string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=fastfood;Uid=lgg;Pwd=<jouwwachtwoordhier>;";
+        public static string connectionString = "Server=172.16.160.21;Port=3306;Database=110689;Uid=110689;Pwd=Informatica2022;";
 
         public static List<Dictionary<string, object>> GetRows(string query)
         {
-            // stel in waar de database gevonden kan worden
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110689;Uid=110689;Pwd=Informatica2022;";
-
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
 
@@ -49,5 +50,22 @@ namespace Database.Database
             return rows;
         }
 
+        public static void SavePerson(Person person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, telefoon, adres, beschrijving) VALUES(?voornaam, ?achternaam, ?email, ?telefoon, ?adres, ?beschrijving)", conn);
+
+                // Elke parameter moet je handmatig toevoegen aan de query
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
+                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?telefoon", MySqlDbType.Text).Value = person.Phone;
+                cmd.Parameters.Add("?adres", MySqlDbType.Text).Value = person.Address;
+                cmd.Parameters.Add("?beschrijving", MySqlDbType.Text).Value = person.Description;
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
