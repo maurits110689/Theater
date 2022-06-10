@@ -48,7 +48,6 @@ namespace Theater.Controllers
                 p.Id = Convert.ToInt32(row["id"]);
                 p.Naam = row["naam"].ToString();
                 p.Beschrijving = row["beschrijving"].ToString();
-                p.Datum = DateTime.Parse(row["datum"].ToString());
                 p.Poster = row["poster"].ToString();
                 
 
@@ -123,7 +122,6 @@ namespace Theater.Controllers
                 p.Id = Convert.ToInt32(row["id"]);
                 p.Naam = row["naam"].ToString();
                 p.Beschrijving = row["beschrijving"].ToString();
-                p.Datum = DateTime.Parse(row["datum"].ToString());
 
 
                 // en dat product voegen we toe aan de lijst met producten

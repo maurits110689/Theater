@@ -1,5 +1,5 @@
 ﻿header {
-    background-color: #D99C52;
+    background-color: #BF1E31;
     display: block;
     height: 90px;
     margin: 0 auto;
@@ -7,6 +7,7 @@
 
 body {
     margin: 0;
+    background-color: #171717;
 }
 
 content {
@@ -16,7 +17,7 @@ content {
 
 .nav {
     overflow: hidden;
-    background-color: #D99C52;
+    background-color: #BF1E31;
 }
 
 .nav a{
@@ -28,10 +29,10 @@ content {
     text-decoration: none;
 }
 
-.nav a:hover {
+    .nav a:hover {
         background-color: #8C0303;
         color: #000000
-}
+    }
 
 article {
     background-color: #8C0303;
@@ -52,13 +53,14 @@ footer {
 }
 
 .center {
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 10%;
 }
 
 .img.center {
+    display: flex;
     text-align: center;
     margin: 0 auto;
     padding: 0px;
